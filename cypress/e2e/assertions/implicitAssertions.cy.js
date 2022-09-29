@@ -43,5 +43,8 @@ it('passes', () => {
 
 
     cy.get('.table.table-bordered.assertion-table tr td').eq(5)
-    .should('be.visible')
+    .should('be.visible');
+
+    cy.get('a[data-toggle="dropdown"]').click();
+    cy.get('.dropdown-menu li').should('have.length', 17);
 })

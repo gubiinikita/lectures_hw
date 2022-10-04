@@ -111,7 +111,7 @@ describe('Toast tests', () => {
         cy.get('[class*="mat-ripple appearance-filled"]').click();
 
         cy.get(`[class*="status-${args.type.bottomRight}"]`)
-        .click({position: "bottomLeft"}, {multiple: true})
+        .click({position: "bottomLeft"}, {multiple: true}) 
         .should('not.exist');
         cy.get('[class*="mat-ripple appearance-filled"]').click();
     
@@ -128,7 +128,7 @@ describe('Toast tests', () => {
         .should('not.exist');
     });
 
-    it.skip('Top right toast test', () => {
+    it('Top right toast test', () => {
         cy.get('[title="Modal & Overlays"]').click();
         cy.get('[title="Toastr"]').click();
     
@@ -146,7 +146,7 @@ describe('Toast tests', () => {
             cy.get('[class="title subtitle"]').should('contain', `${expected.title.topRight}`);
             cy.get('[class="message"]').should('contain', `${expected.content.topRight}`);
         })
-        //.should('be.visible') - конкретно этот кейс не работает. Почему?
+        .should('be.visible')
         .should('have.css', 'background-color')
         .and('eq', `${expected.color.topRight}`);
 
